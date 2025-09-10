@@ -16,6 +16,7 @@ public class BoostLifeContext(DbContextOptions options) : DbContext(options)
     {
 
         base.OnConfiguring(optionsBuilder);
+
         string connectionString = ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString;
         optionsBuilder.UseNpgsql(connectionString);
 
@@ -29,6 +30,9 @@ public class BoostLifeContext(DbContextOptions options) : DbContext(options)
             e.Property(x => x.Id).IsRequired();
             e.Property(x => x.Descricao).IsRequired().HasColumnType("TEXT");
         });
+
+        modelBuilder.Entity<Vicio>(x => x.Ignore(p => p.Progress));
+
     }
 
 

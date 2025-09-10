@@ -10,8 +10,13 @@ public partial class Vicio : ObservableObject
     private string _descricao = string.Empty;
     [ObservableProperty]
     private DateTime _inicioJornada;
+
+   
     [ObservableProperty]
     private int _diasMeta;
+
+    [ObservableProperty]
+    private int _progress;
 
 
 }

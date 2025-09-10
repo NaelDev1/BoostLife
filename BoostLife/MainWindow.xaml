@@ -53,7 +53,7 @@
             <TextBlock Text="1.0.0" Foreground="#bcbc1d" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5"/>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="320"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
@@ -65,24 +65,32 @@
                     <Icon:PackIconGameIcons Kind="Thunderball" Foreground="Yellow" Width="50" Height="50" VerticalAlignment="Center"/>
                     <TextBlock Text="BoostLife" Foreground="White" FontWeight="Bold" FontSize="50" Margin="10 0 0 0"/>
                 </StackPanel>
-                <StackPanel Grid.Row="1">
+                <ScrollViewer Style="{StaticResource scrollViwer
+                              }" VerticalScrollBarVisibility="Visible"  Grid.Row="1" >
+                    <StackPanel>
 
-
-                    <WrapPanel Margin="5" >
-                        <CustomControls:NavBarButton Title="Dashboard" Icon="BarChartLine"/>
-                        <CustomControls:NavBarButton Title="Divino" Icon="Fire"/>
-                        <CustomControls:NavBarButton Title="Contas" Icon="CreditCard"/>
-                        <CustomControls:NavBarButton Title="Vícios" Icon="SignStop"/>
-                        <CustomControls:NavBarButton Title="Livros" Icon="Book"/>
-                        <CustomControls:NavBarButton Title="Saúde" Icon="PersonWalking"/>
-                        <CustomControls:NavBarButton Title="Desejos" Icon="Bag"/>
-                        <CustomControls:NavBarButton Title="Agenda" Icon="ListCheck"/>
-                        <CustomControls:NavBarButton Title="Tasks" Icon="Play"/>
-                        <CustomControls:NavBarButton Title="Diário" Icon="BodyText"/>
-                        <CustomControls:NavBarButton Title="Métas" Icon="EmojiSmile"/>
-                        <CustomControls:NavBarButton Title="Projetos" Icon="PersonWorkspace" ClickCommand="{Binding IrParaProjetosCommand}"/>
-                    </WrapPanel>
-                </StackPanel>
+                        <WrapPanel Margin="5" >
+                            <CustomControls:NavBarButton Title="Dashboard" Icon="BarChartLine"/>
+                            <CustomControls:NavBarButton Title="Divino" Icon="Fire"/>
+                            <CustomControls:NavBarButton Title="Contas" Icon="CreditCard" ClickCommand="{Binding IrParaTelaCommand}" ClickCommandParameters="{x:Static vm:TipoTela.CONTAS}" />
+                            <CustomControls:NavBarButton Title="Vícios" Icon="SignStop" ClickCommand="{Binding IrParaTelaCommand}" ClickCommandParameters="{x:Static vm:TipoTela.VICIOS}"/>
+                            <CustomControls:NavBarButton Title="Livros" Icon="Book"/>
+                            <CustomControls:NavBarButton Title="Saúde" Icon="PersonWalking"/>
+                            <CustomControls:NavBarButton Title="Desejos" Icon="Bag"/>
+                            <CustomControls:NavBarButton Title="Agenda" Icon="ListCheck"/>
+                            <CustomControls:NavBarButton Title="Tasks" Icon="Play"/>
+                            <CustomControls:NavBarButton Title="Diário" Icon="BodyText"/>
+                            <CustomControls:NavBarButton Title="Métas" Icon="EmojiSmile"/>
+                            <CustomControls:NavBarButton Title="Projetos" Icon="PersonWorkspace" ClickCommand="{Binding IrParaTelaCommand}" ClickCommandParameters="{x:Static vm:TipoTela.PROJETOS}"/>
+                            <CustomControls:NavBarButton Title="Projetos" Icon="PersonWorkspace" ClickCommand="{Binding IrParaTelaCommand}" ClickCommandParameters="{x:Static vm:TipoTela.PROJETOS}"/>
+                            <CustomControls:NavBarButton Title="Projetos" Icon="PersonWorkspace" ClickCommand="{Binding IrParaTelaCommand}" ClickCommandParameters="{x:Static vm:TipoTela.PROJETOS}"/>
+                            <CustomControls:NavBarButton Title="Projetos" Icon="PersonWorkspace" ClickCommand="{Binding IrParaTelaCommand}" ClickCommandParameters="{x:Static vm:TipoTela.PROJETOS}"/>
+                            <CustomControls:NavBarButton Title="Projetos" Icon="PersonWorkspace" ClickCommand="{Binding IrParaTelaCommand}" ClickCommandParameters="{x:Static vm:TipoTela.PROJETOS}"/>
+                            <CustomControls:NavBarButton Title="Projetos" Icon="PersonWorkspace" ClickCommand="{Binding IrParaTelaCommand}" ClickCommandParameters="{x:Static vm:TipoTela.PROJETOS}"/>
+                            <CustomControls:NavBarButton Title="Projetos" Icon="PersonWorkspace" ClickCommand="{Binding IrParaTelaCommand}" ClickCommandParameters="{x:Static vm:TipoTela.PROJETOS}"/>
+                        </WrapPanel>
+                    </StackPanel>
+                </ScrollViewer>
 
 
 

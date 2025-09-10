@@ -24,5 +24,32 @@ namespace BoostLife.CustomControls
         {
             InitializeComponent();
         }
+
+        public string Title
+        {
+            get => (string)GetValue(TitleProperty);
+            set => SetValue(TitleProperty, value);
+        }
+
+        static readonly DependencyProperty TitleProperty =
+           DependencyProperty.Register(nameof(Title), typeof(string), typeof(RegenerateControl), new PropertyMetadata("Titulo"));
+
+        public string Date
+        {
+            get => (string)GetValue(DateProperty);
+            set => SetValue(DateProperty, value);
+        }
+
+        static readonly DependencyProperty DateProperty =
+           DependencyProperty.Register(nameof(Date), typeof(string), typeof(RegenerateControl), new PropertyMetadata("10d 11m 47s"));
+
+        public int Progress
+        {
+            get => (int)GetValue(ProgressProperty);
+            set => SetValue(ProgressProperty, value);
+        }
+
+        static readonly DependencyProperty ProgressProperty =
+           DependencyProperty.Register(nameof(Progress), typeof(int), typeof(RegenerateControl), new PropertyMetadata(0));
     }
 }

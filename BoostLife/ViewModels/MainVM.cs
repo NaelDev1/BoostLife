@@ -7,13 +7,35 @@ namespace BoostLife.ViewModels;
 
 internal partial class MainVM : ObservableObject
 {
-[ObservableProperty]
-private UserControl _currentView = new ViciosView();
+    [ObservableProperty]
+    private UserControl _currentView = new ViciosView();
 
-[RelayCommand]
-private void IrParaProjetos()
-{
-CurrentView = new Projetos();
+    [RelayCommand]
+    private void IrParaTela(TipoTela tela)
+    {
+        switch (tela)
+        {
+            case TipoTela.PROJETOS:
+                    if (CurrentView.Name != "TelaProjetos")
+                    CurrentView = new ProjetosView();
+                break;
+            case TipoTela.CONTAS:
+                    if (CurrentView.Name != "TelaContas")
+                CurrentView = new ContasView();
+                break;
+            case TipoTela.VICIOS:
+                    if (CurrentView.Name != "TelaVicios")
+                CurrentView = new ViciosView();
+                break;
+        }
+
+    }
+
 }
 
+enum TipoTela
+{
+    PROJETOS,
+    CONTAS,
+    VICIOS
 }

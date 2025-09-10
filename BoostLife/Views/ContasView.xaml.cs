@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BoostLife.Views
 {
     /// <summary>
-    /// Interação lógica para Projetos.xam
+    /// Interação lógica para Contas.xam
     /// </summary>
-    public partial class Projetos : UserControl
+    public partial class ContasView : UserControl
     {
-        public Projetos()
+        public ContasView()
         {
             InitializeComponent();
         }

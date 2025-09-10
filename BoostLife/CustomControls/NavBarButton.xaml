@@ -42,7 +42,8 @@
         </Style>
     </UserControl.Resources>
     <Grid Width="125" Height="80">
-        <Button x:Name="button" Style="{StaticResource bt}"  Command="{Binding ClickCommand, RelativeSource={RelativeSource AncestorType=UserControl}}">
+        <Button x:Name="button" Style="{StaticResource bt}"  Command="{Binding ClickCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                CommandParameter="{Binding ClickCommandParameters, RelativeSource={RelativeSource AncestorType=UserControl}}">
             <StackPanel>
                 <Icon:PackIconBootstrapIcons Kind="{Binding Icon, RelativeSource={RelativeSource AncestorType=UserControl}}" Foreground="White" Width="30" Height="30" HorizontalAlignment="Center"/>
                 <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}" Foreground="White" FontSize="20"/>

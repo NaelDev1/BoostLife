@@ -6,15 +6,17 @@
              xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:local="clr-namespace:BoostLife.CustomControls"
              mc:Ignorable="d"
+
              MinWidth="400">
     <UserControl.Resources>
         <Style x:Key="CustomProgress" TargetType="ProgressBar">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ProgressBar">
-                        <Grid  >
+                        <Grid  Width="auto">
                             <!--<Border CornerRadius="15" Background="#452c63" />-->
-                            <Border x:Name="PART_Track" CornerRadius="15">
+                            <Border x:Name="PART_Track" CornerRadius="15"
+                                    >
                                 <Border.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                                         <GradientStop Color="#1d1160"/>
@@ -24,9 +26,16 @@
                             </Border>
                             <Border x:Name="PART_Indicator"
                                     HorizontalAlignment="Left"
-                                    CornerRadius="10"
-                                    Margin="5"
+                                    CornerRadius="10 10 10 10"
+                                    Margin="10,5,-20,5"
                                     >
+                                <Border.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="0.97"/>
+                                        <TranslateTransform X="-5"/>
+
+                                    </TransformGroup>
+                                </Border.RenderTransform>
                                 <Border.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                                         <GradientStop Color="#720e9e"/>
@@ -61,12 +70,12 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Text="Alcool" Foreground="#cbcbcb" FontWeight="Black" Margin="10 0 0 0" FontSize="20" VerticalAlignment="Bottom"/>
-                <ProgressBar Value="50" Style="{StaticResource CustomProgress}" Grid.Row="1" Margin="5" Height="40"/>
+                <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}" Foreground="#cbcbcb" FontWeight="Black" Margin="10 0 0 0" FontSize="20" VerticalAlignment="Bottom"/>
+                <ProgressBar Value="100 " Style="{StaticResource CustomProgress}" Grid.Row="1" Margin="5" Height="40"/>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                     <TextBlock Text="Livre há" Foreground="#cbcbcb" FontWeight="Medium" FontSize="15"/>
-                    <TextBlock Text="10d 11m 47s" Foreground="#cbcbcb" FontWeight="Medium" FontSize="15"  Margin="20 0 10 0"/>
+                    <TextBlock Text="{Binding Date,RelativeSource={RelativeSource AncestorType=UserControl}}" Foreground="#cbcbcb" FontWeight="Medium" FontSize="15"  Margin="20 0 10 0"/>
 
                 </StackPanel >
                 <StackPanel Grid.Column="1" Grid.RowSpan="2" Margin="5" Orientation="Horizontal">
