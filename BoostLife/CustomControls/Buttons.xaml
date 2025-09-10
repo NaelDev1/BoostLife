@@ -9,14 +9,14 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    
-                    <Border 
-                            x:Name="border"
-                            Background="#404040"
-                            CornerRadius="8"
-                            Height="30"
-                            Width="30"
-                            Padding="3">
+
+                    <Border
+                        x:Name="border"
+                        Background="#404040"
+                        CornerRadius="8"
+                        Height="30"
+                        Width="30"
+                        Padding="3">
                         <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center"/>
                     </Border>
@@ -28,20 +28,27 @@
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
-            
+
         </Setter>
-        
+
     </Style>
     <!--#endregion-->
-    
-    
+
+
     <!--#region GlassButton-->
     <Style x:Key="glassButton" TargetType="Button">
-        
-        
+
+
     </Style>
-    
+
     <!--#endregion-->
-    
-    
+
+
+    <!--#region Progress Style-->
+
+   
+
+    <!--#endregion-->
+
+
 </ResourceDictionary>

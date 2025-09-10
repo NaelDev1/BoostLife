@@ -1,5 +1,6 @@
 ﻿using BoostLife.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 namespace BoostLife.DAL;
 
@@ -13,8 +14,10 @@ public class BoostLifeContext(DbContextOptions options) : DbContext(options)
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+
         base.OnConfiguring(optionsBuilder);
-        optionsBuilder.UseNpgsql("Host=localhost;Database=boostlife; User Id=postgres; Port=5432; Password=root;");
+        string connectionString = ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString;
+        optionsBuilder.UseNpgsql(connectionString);
 
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
