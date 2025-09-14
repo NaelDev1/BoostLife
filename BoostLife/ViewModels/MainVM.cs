@@ -16,16 +16,20 @@ internal partial class MainVM : ObservableObject
         switch (tela)
         {
             case TipoTela.PROJETOS:
-                    if (CurrentView.Name != "TelaProjetos")
+                if (CurrentView.Name != "TelaProjetos")
                     CurrentView = new ProjetosView();
                 break;
             case TipoTela.CONTAS:
-                    if (CurrentView.Name != "TelaContas")
-                CurrentView = new ContasView();
+                if (CurrentView.Name != "TelaContas")
+                    CurrentView = new ContasView();
                 break;
             case TipoTela.VICIOS:
-                    if (CurrentView.Name != "TelaVicios")
-                CurrentView = new ViciosView();
+                if (CurrentView.Name != "TelaVicios")
+                    CurrentView = new ViciosView();
+                break;
+            case TipoTela.SAUDE:
+                if (CurrentView.Name != "TelaSaude")
+                    CurrentView = new ViciosView();
                 break;
         }
 
@@ -37,5 +41,6 @@ enum TipoTela
 {
     PROJETOS,
     CONTAS,
-    VICIOS
+    VICIOS,
+    SAUDE,
 }

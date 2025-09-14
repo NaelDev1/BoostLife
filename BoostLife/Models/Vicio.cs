@@ -18,5 +18,8 @@ public partial class Vicio : ObservableObject
     [ObservableProperty]
     private int _progress;
 
+    [ObservableProperty]
+    private double _tempoPassado;
+
 
 }

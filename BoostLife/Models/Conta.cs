@@ -7,5 +7,7 @@ public class Conta
     public int Valor { get; set; }
     public int QtdParcelas { get; set; }
     public DateTime DiaCompra { get; set; }
+
+
      
 }

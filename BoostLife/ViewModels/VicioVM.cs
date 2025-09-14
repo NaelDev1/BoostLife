@@ -69,12 +69,10 @@ internal partial class VicioVM : ObservableObject
                     float result = (float)dataSubFormat / (float)v.DiasMeta;
                     float progress = result * 100.00f;
                     v.Progress = (int)Math.Round(progress) ;
-                    
-                    Console.WriteLine(progress);
 
                 }
                 else
-                    v.Progress = 100;
+                    v.Progress = 0;
             }
         }
     }
@@ -84,6 +82,13 @@ internal partial class VicioVM : ObservableObject
         try
         {
             List<Vicio> vicios = await _rep.PegarTodos();
+            var hoje = DateTime.Now;
+            foreach(var v in vicios)
+            {
+                var tempoPassado = Math.Round(hoje.Subtract(v.InicioJornada).TotalDays);
+                v.TempoPassado = tempoPassado;
+                
+            }
             Vicios ??= new([]);
             Vicios = new(vicios.AsEnumerable());
         }

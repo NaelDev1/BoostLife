@@ -74,7 +74,10 @@
                 <DataTemplate>
                     <ScrollViewer VerticalScrollBarVisibility="Hidden">
                         <StackPanel>
-                            <Cc:RegenerateControl Height="90" Progress="{Binding Progress, UpdateSourceTrigger=PropertyChanged}" Title="{Binding Descricao}" Margin="0 0 0 10"/>
+                            <Cc:RegenerateControl Height="90" Progress="{Binding Progress, UpdateSourceTrigger=PropertyChanged}"
+                                                  Date="{Binding TempoPassado}"
+                                                  Title="{Binding Descricao}"
+                                                  Margin="0 0 0 10"/>
                         </StackPanel>
                     </ScrollViewer>
                 </DataTemplate>

@@ -31,7 +31,10 @@ public class BoostLifeContext(DbContextOptions options) : DbContext(options)
             e.Property(x => x.Descricao).IsRequired().HasColumnType("TEXT");
         });
 
-        modelBuilder.Entity<Vicio>(x => x.Ignore(p => p.Progress));
+        modelBuilder.Entity<Vicio>(x => {
+            x.Ignore(p => p.Progress);
+            x.Ignore(p => p.TempoPassado);
+            });
 
     }
 
